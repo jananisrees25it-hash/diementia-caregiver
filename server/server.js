@@ -34,7 +34,9 @@ app.use((req, res, next) => {
   }
   next();
 });
-
+app.get('/', (req, res) => {
+  res.send('Dementia Caregiver API is running');
+});
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
