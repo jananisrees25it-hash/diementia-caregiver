@@ -1,7 +1,20 @@
-"scripts": {
-  "install:all": "cd server && npm install && cd ../client && npm install",
-  "start": "cd server && npm start",
-  "start:server": "cd server && npm start",
-  "start:client": "cd client && npm run dev",
-  "dev": "node run-all.js"
+{
+  "name": "ai-cognitive-support-caregiver-assistance",
+  "version": "1.0.0",
+  "description": "AI-Powered Cognitive Support & Caregiver Assistance Web Application",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "start": "npm --prefix server start",
+    "start:server": "npm --prefix server start",
+    "start:client": "npm --prefix client run dev",
+    "dev": "node run-all.js"
+  },
+  "keywords": [
+    "cognitive-support",
+    "caregiver",
+    "elderly-care",
+    "memory-support"
+  ],
+  "author": "Cognitive Care Platform",
+  "license": "MIT"
 }
