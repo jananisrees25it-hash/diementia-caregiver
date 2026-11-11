@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
+const qpp=express();
 
 // Load environment variables
 dotenv.config();
@@ -76,12 +77,10 @@ const startServer = async () => {
     await initDataService();
 
     app.listen(PORT, () => {
-      console.log(`=======================================================`);
-      console.log(` Cognitive Support & Caregiver Assistance API Running!`);
-      console.log(` Port:    http://localhost:${PORT}`);
-      console.log(` Health:  http://localhost:${PORT}/api/health`);
-      console.log(` DB Mode: ${getDBMode()}`);
-      console.log(`=======================================================`);
+      if (require.main === module) {
+  app.listen(process.env.PORT || 3000, () => console.log('Running'));
+}
+module.exports = app;
     });
   } catch (error) {
     console.error('Fatal initialization error:', error);
